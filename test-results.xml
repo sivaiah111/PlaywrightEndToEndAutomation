@@ -1,0 +1,25 @@
+<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="3.4535790000000004">
+<testsuite name="saucedemo\login.spec.ts" timestamp="2026-09-13T12:54:48.779Z" hostname="chromium" tests="3" failures="0" skipped="0" time="4.05" errors="0">
+<testcase name="Login Tests › should login with valid credentials" classname="saucedemo\login.spec.ts" time="1.924">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\saucedemo-login-Login-Test-1503d-ogin-with-valid-credentials-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Tests › should show error with locked out credentials" classname="saucedemo\login.spec.ts" time="1.066">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\saucedemo-login-Login-Test-ef31e-with-locked-out-credentials-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Tests › should show error with invalid credentials" classname="saucedemo\login.spec.ts" time="1.06">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\saucedemo-login-Login-Test-63b13-or-with-invalid-credentials-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

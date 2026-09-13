@@ -17,9 +17,9 @@ export class LoginPage extends BasePage {
         this.passwordInput = page.locator('#password');
         this.loginButton = page.locator('#login-button');
       //  this.loginButton = page.getByRole('button', { name: 'Login' });
-        this.swaglabsLogo = page.locator('.login_logo'); //.classvalue or [attributenam='attributevalue']
+        this.swaglabsLogo = page.locator('div.login_logo'); //.classvalue or [attributenam='attributevalue']
       //  this.swaglabsLogo = page.getByText('Swag Labs');
-       this.errorMessage = this.page.getByRole('heading', { level: 3 });
+       this.errorMessage = this.page.getByRole('alert')
     }
 
     async loginAs(userType: string) {

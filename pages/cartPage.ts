@@ -14,9 +14,9 @@ export class CartPage extends BasePage {
         super(page);
         this.cartTitle = page.locator('.title'); // .classvalue or [attributenam='attributevalue']
         this.cartItems = page.locator('.cart_item');
-        this.continueShoppingButton = page.getByText('Continue Shopping');
-        this.checkoutButton = page.getByText('Checkout');
-        this.removeButtons = page.getByRole('button', { name: 'Remove' });
+        this.continueShoppingButton = page.locator('button:has-text("Continue Shopping")');
+        this.checkoutButton = page.locator('button:has-text("Checkout")');
+        this.removeButtons = page.locator('button:has-text("Remove")');
         this.quantityInput = page.locator('.cart_quantity');
         this.itemPrice = page.locator('.inventory_item_price');
     }

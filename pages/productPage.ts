@@ -19,11 +19,11 @@ export class ProductPage extends BasePage {
         this.productName = page.locator('.inventory_item_name');
         this.productDescription = page.locator('.inventory_item_name');
         this.productPrice = page.locator('.inventory_item_price');
-        this.addToCartButton = page.getByText('Add to cart');
-        this.removeFromCartButton = page.getByText('Remove');
+        this.addToCartButton = page.locator('button:has-text("Add to cart")');
+        this.removeFromCartButton = page.locator('button:has-text("Remove")');
         this.shoppingCartIcon = page.locator('.shopping_cart_link');
         this.hamburgerMenu = page.locator('#react-burger-menu-btn');
-        this.logoutButton = page.getByText('Logout');
+        this.logoutButton = page.locator('#logout_sidebar_link');
         this.productList = page.locator('.inventory_item');
     }
 
