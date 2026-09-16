@@ -1,0 +1,174 @@
+<testsuites id="" name="" tests="22" failures="0" skipped="0" errors="0" time="37.867907">
+<testsuite name="saucedemo\cartpage.spec.ts" timestamp="2026-09-16T01:35:40.700Z" hostname="chromium" tests="3" failures="0" skipped="0" time="22.192" errors="0">
+<testcase name="Cart page tests › click on continue shopping button and verify navigation to product page" classname="saucedemo\cartpage.spec.ts" time="7.53">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\saucedemo-cartpage-Cart-pa-3d01d--navigation-to-product-page-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Cart page tests › remove product from cart and verify cart count" classname="saucedemo\cartpage.spec.ts" time="7.449">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\saucedemo-cartpage-Cart-pa-9248a--cart-and-verify-cart-count-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Cart page tests › click on checkout button and verify navigation to checkout page" classname="saucedemo\cartpage.spec.ts" time="7.213">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\saucedemo-cartpage-Cart-pa-40696-navigation-to-checkout-page-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="saucedemo\checkout-csv-data-driven.spec.ts" timestamp="2026-09-16T01:35:40.700Z" hostname="chromium" tests="3" failures="0" skipped="0" time="29.655" errors="0">
+<testcase name="checkout page tests › verify order completion flow with data set 1-JohnDoe 123456" classname="saucedemo\checkout-csv-data-driven.spec.ts" time="9.109">
+<system-out>
+<![CDATA[cartcount#:: [33m1[39m
+
+[[ATTACHMENT|test-results\saucedemo-checkout-csv-dat-c5ccd-h-data-set-1-JohnDoe-123456-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="checkout page tests › verify order completion flow with data set 2-sivaiahPs 560048" classname="saucedemo\checkout-csv-data-driven.spec.ts" time="12.25">
+<system-out>
+<![CDATA[cartcount#:: [33m1[39m
+
+[[ATTACHMENT|test-results\saucedemo-checkout-csv-dat-004b6-data-set-2-sivaiahPs-560048-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="checkout page tests › verify order completion flow with data set 3-RameshCh 560036" classname="saucedemo\checkout-csv-data-driven.spec.ts" time="8.296">
+<system-out>
+<![CDATA[cartcount#:: [33m1[39m
+
+[[ATTACHMENT|test-results\saucedemo-checkout-csv-dat-ae32f--data-set-3-RameshCh-560036-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="saucedemo\checkout-datadriven.spec.ts" timestamp="2026-09-16T01:35:40.700Z" hostname="chromium" tests="3" failures="0" skipped="0" time="16.657" errors="0">
+<testcase name="checkout page tests › verify order completion flow with data set 1-JohnDoe 12345" classname="saucedemo\checkout-datadriven.spec.ts" time="4.855">
+<system-out>
+<![CDATA[cartcount#:: [33m1[39m
+
+[[ATTACHMENT|test-results\saucedemo-checkout-datadri-2fcf6-th-data-set-1-JohnDoe-12345-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="checkout page tests › verify order completion flow with data set 2-JaneSmith 54321" classname="saucedemo\checkout-datadriven.spec.ts" time="5.598">
+<system-out>
+<![CDATA[cartcount#:: [33m1[39m
+
+[[ATTACHMENT|test-results\saucedemo-checkout-datadri-a2e5d--data-set-2-JaneSmith-54321-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="checkout page tests › verify order completion flow with data set 3-AliceJohnson 67890" classname="saucedemo\checkout-datadriven.spec.ts" time="6.204">
+<system-out>
+<![CDATA[cartcount#:: [33m1[39m
+
+[[ATTACHMENT|test-results\saucedemo-checkout-datadri-125a7-ta-set-3-AliceJohnson-67890-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="saucedemo\checkout.spec.ts" timestamp="2026-09-16T01:35:40.700Z" hostname="chromium" tests="3" failures="0" skipped="0" time="18.874" errors="0">
+<testcase name="checkout page tests › verify order completion flow" classname="saucedemo\checkout.spec.ts" time="5.128">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\saucedemo-checkout-checkou-bee04-erify-order-completion-flow-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="checkout page tests › verify cancel button functionality on checkout page" classname="saucedemo\checkout.spec.ts" time="7.107">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\saucedemo-checkout-checkou-b73d6-ctionality-on-checkout-page-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="checkout page tests › Verify cancel button in checkout overview page" classname="saucedemo\checkout.spec.ts" time="6.639">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\saucedemo-checkout-checkou-284a4-n-in-checkout-overview-page-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="saucedemo\login.spec.ts" timestamp="2026-09-16T01:35:40.700Z" hostname="chromium" tests="3" failures="0" skipped="0" time="6.968" errors="0">
+<testcase name="Login Tests › should login with valid credentials" classname="saucedemo\login.spec.ts" time="2.901">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\saucedemo-login-Login-Test-1503d-ogin-with-valid-credentials-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Tests › should show error with locked out credentials" classname="saucedemo\login.spec.ts" time="2.112">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\saucedemo-login-Login-Test-ef31e-with-locked-out-credentials-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Tests › should show error with invalid credentials" classname="saucedemo\login.spec.ts" time="1.955">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\saucedemo-login-Login-Test-63b13-or-with-invalid-credentials-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="saucedemo\products.spec.ts" timestamp="2026-09-16T01:35:40.700Z" hostname="chromium" tests="7" failures="0" skipped="0" time="28.795" errors="0">
+<testcase name="Products page Tests › should display products and verfy product list" classname="saucedemo\products.spec.ts" time="5.728">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\saucedemo-products-Product-e8cfe-ucts-and-verfy-product-list-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Products page Tests › Add products to cart and verify cart count" classname="saucedemo\products.spec.ts" time="4.548">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\saucedemo-products-Product-3ba03--cart-and-verify-cart-count-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Products page Tests › Add product by name and verify cart count" classname="saucedemo\products.spec.ts" time="4.451">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\saucedemo-products-Product-e0255--name-and-verify-cart-count-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Products page Tests › Remove product by name and verify cart count" classname="saucedemo\products.spec.ts" time="3.496">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\saucedemo-products-Product-ebe7c--name-and-verify-cart-count-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Products page Tests › Add all products to cart and verify cart count" classname="saucedemo\products.spec.ts" time="4.646">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\saucedemo-products-Product-1bdaa--cart-and-verify-cart-count-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Products page Tests › sort products by price low to high and verify sorting" classname="saucedemo\products.spec.ts" time="3.037">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\saucedemo-products-Product-d14cd--to-high-and-verify-sorting-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Products page Tests › Navigate to cart page" classname="saucedemo\products.spec.ts" time="2.889">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\saucedemo-products-Products-page-Tests-Navigate-to-cart-page-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
