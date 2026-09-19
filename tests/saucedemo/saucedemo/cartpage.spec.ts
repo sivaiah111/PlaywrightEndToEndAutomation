@@ -1,5 +1,5 @@
-import {test,expect} from '../../fixtures/appFixtures';
-import{FileWriter} from '../../utils/fileWriter';
+import {test,expect} from '../../../fixtures/appFixtures';
+import{FileWriter} from '../../../utils/fileWriter';
 
 test.describe('Cart page tests', () => {
 
