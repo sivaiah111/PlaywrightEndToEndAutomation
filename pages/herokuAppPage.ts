@@ -77,16 +77,25 @@ export class HerokuAppPage extends BasePage {
         await this.page.getByRole('button', { name: 'Upload' }).click();
     }
 
-    // //multipl file upload
-    // async uploadMultipleFiles(fileNames: string[]) {
-    //     const filePaths = fileNames.map(fileName => path.resolve(`testdata/${fileName}`));
-    //     const fileInput = this.page.locator('#file-upload');
-    //     await fileInput.setInputFiles(filePaths);
-    //     await this.page.getByRole('button', { name: 'Upload' }).click();
-    // } 
+    //multipl file upload
+    async uploadMultipleFiles(fileNames: string[]) {
+        const filePaths = fileNames.map(fileName => path.resolve(`testdata/${fileName}`));
+        const fileInput = this.page.locator('#file-upload');
+        await fileInput.setInputFiles(filePaths);
+        await this.page.getByRole('button', { name: 'Upload' }).click();
+    } 
 
     async getUploadedFileName() {
         return (await this.page.locator('#uploaded-files').innerText()).trim();
+    }
+
+        //handling multipl windows
+        async navigateToMultipleWindows() {
+        await this.page.getByRole('link', { name: 'Multiple Windows' }).click();                        
+    }
+
+    async clickClickHereLink() {
+        await this.page.getByRole('link', { name: 'Click Here' }).click();                        
     }
 
 }
