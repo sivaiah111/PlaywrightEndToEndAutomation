@@ -1,15 +1,19 @@
 
-# Playwright
+# Node.js
 node_modules/
-/test-results/
-/playwright-report/
-/blob-report/
-/playwright/.cache/
-/playwright/.auth/
-/allure-results/*
-/allure-report/*
-/test-results/*
-/allure-results/*
-/allure-results/*
- test-results.json
- test-results.xml
+
+# Playwright
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+playwright/.auth/
+
+# Allure
+allure-results/
+allure-report/
+
+# Test result files
+test-results.json
+test-results.xml
+
