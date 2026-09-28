@@ -63,11 +63,9 @@ export class ProductPage extends BasePage {
 }
     //add all products
     async addAllProductsToCart() {
-        const addButtons = await this.addToCartButton.elementHandles();
-        const count = addButtons.length;
-        for (let i = 0; i < count; i++) {
-            await addButtons[i].click();
-        }
+        while (await this.addToCartButton.count() > 0) {
+        await this.addToCartButton.first().click();
+    }
     }
 
     //navigate to cart page
