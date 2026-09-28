@@ -1,4 +1,4 @@
-import {test,expect} from '../../fixtures/appFixtures';
+import {test,expect} from '../../../fixtures/appFixtures';
 
 test.describe('Products page Tests', () => {
 test.setTimeout(60000);
