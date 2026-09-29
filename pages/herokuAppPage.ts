@@ -77,16 +77,110 @@ export class HerokuAppPage extends BasePage {
         await this.page.getByRole('button', { name: 'Upload' }).click();
     }
 
-    // //multipl file upload
-    // async uploadMultipleFiles(fileNames: string[]) {
-    //     const filePaths = fileNames.map(fileName => path.resolve(`testdata/${fileName}`));
-    //     const fileInput = this.page.locator('#file-upload');
-    //     await fileInput.setInputFiles(filePaths);
-    //     await this.page.getByRole('button', { name: 'Upload' }).click();
-    // } 
+    //multipl file upload
+    async uploadMultipleFiles(fileNames: string[]) {
+        const filePaths = fileNames.map(fileName => path.resolve(`testdata/${fileName}`));
+        const fileInput = this.page.locator('#file-upload');
+        await fileInput.setInputFiles(filePaths);
+        await this.page.getByRole('button', { name: 'Upload' }).click();
+    } 
 
     async getUploadedFileName() {
         return (await this.page.locator('#uploaded-files').innerText()).trim();
+    }
+
+    //file download
+    async navigateToFileDownload() {
+        await this.page.getByRole('link', { name: 'File Download', exact: true }).click();                        
+    }
+
+   async downloadFile(fileName: string) {
+  const [download] = await Promise.all([
+    this.page.waitForEvent('download'),
+    this.page.getByRole('link', { name: fileName, exact: true }).click()
+  ]);
+
+  return download;
+}
+//drag and drop
+async navigateToDragAndDrop() {
+    await this.page.getByRole('link', { name: 'Drag and Drop' }).click();                        
+}
+
+async dragAndDrop() {
+    const source = this.page.locator('#column-a');
+    const target = this.page.locator('#column-b');
+    await source.dragTo(target);
+}
+
+async getColumnAText() {
+    return this.page.locator('#column-a header').textContent();
+}   
+
+async getColumnBText() {
+    return this.page.locator('#column-b header').textContent();
+}
+
+async dragAndDropUsingMouseEvents() {
+    const source = this.page.locator('#column-a');
+    const target = this.page.locator('#column-b');
+   await source.hover();
+   await this.page.mouse.down();
+   await target.hover();
+   await this.page.mouse.up();
+}
+
+ //handling multipl windows
+        async navigateToMultipleWindows() {
+        await this.page.getByRole('link', { name: 'Multiple Windows' }).click();                        
+    }
+
+    async clickClickHereLink() {
+        await this.page.getByRole('link', { name: 'Click Here' }).click();                        
+    }
+
+    //key press
+async navigateToKeyPress() {
+    await this.page.getByRole('link', { name: 'Key Presses' }).click();                        
+}
+
+async pressKeys(keys: string[]) {
+    for (const key of keys) {
+        await this.page.keyboard.press(key);
+    }   
+}
+
+async getKeyboardActionResultText() {
+    return this.page.locator('#result').textContent();
+}   
+
+async typeText(text: string) {
+    await this.page.locator('#target').click(); // Clear the input field before typing
+await this.page.keyboard.type(text);
+}
+
+async keyboardShortcutExample() {
+      await this.page.locator('#target').click();
+      await this.page.keyboard.type('Hello, World!');
+      //CTRL +A
+        await this.page.keyboard.down('Control');
+        await this.page.keyboard.press('KeyA');
+        await this.page.keyboard.up('Control');
+        //CTRL +C
+        await this.page.keyboard.down('Control');
+        await this.page.keyboard.press('KeyC');
+        await this.page.keyboard.up('Control');
+        //CTRL +V
+        await this.page.keyboard.down('Control');   
+        await this.page.keyboard.press('KeyV');
+        await this.page.keyboard.up('Control');
+
+       //usng press method
+        await this.page.locator('#target').click();
+        await this.page.keyboard.type('Hello, World!');
+        await this.page.keyboard.press('Control+A');
+        await this.page.keyboard.press('Control+C');
+        await this.page.keyboard.press('Control+V');
     }
 
 }
