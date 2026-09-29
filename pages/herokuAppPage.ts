@@ -130,7 +130,7 @@ async dragAndDropUsingMouseEvents() {
    await this.page.mouse.up();
 }
 
- //handling multipl windows
+        //handling multipl windows
         async navigateToMultipleWindows() {
         await this.page.getByRole('link', { name: 'Multiple Windows' }).click();                        
     }
