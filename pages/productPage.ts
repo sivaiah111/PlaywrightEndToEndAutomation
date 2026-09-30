@@ -74,15 +74,27 @@ export class ProductPage extends BasePage {
         await this.shoppingCartIcon.click();
     }
 
-    //get product count in cart
+    // //get product count in cart
+    // async getCartItemCount(): Promise<number> {
+    //     if(!(await this.shoppingCartIcon.isVisible())){
+    //          return 0;
+    //     }
+
+    //      const countText = await this.shoppingCartIcon.textContent();
+    //         return countText ? parseInt(countText.trim()) : 0;
+    // } 
+    // Get product count in cart safely
     async getCartItemCount(): Promise<number> {
-        if(!(await this.shoppingCartIcon.isVisible())){
-             return 0;
+        const badge = this.page.locator('.shopping_cart_badge');
+
+        // If badge is missing, cart is empty
+        if (await badge.count() === 0) {
+            return 0;
         }
-      
-         const countText = await this.shoppingCartIcon.textContent();
-            return countText ? parseInt(countText.trim()) : 0;
-    }  
+
+        const countText = await badge.textContent();
+        return countText ? parseInt(countText.trim(), 10) : 0;
+    }
 
     //logout from application
     async logout() {
