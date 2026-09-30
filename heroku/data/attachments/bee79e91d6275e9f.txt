@@ -1,1 +1,0 @@
-Downloaded file path: /home/runner/work/PlaywrightEndToEndAutomation/PlaywrightEndToEndAutomation/test-results/.playwright-artifacts-0/64f7a653-567a-451a-858f-df95d068bd8d
