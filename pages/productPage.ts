@@ -62,11 +62,19 @@ export class ProductPage extends BasePage {
 
         await product.getByRole('button', { name: 'Remove' }).click();
     }
-    //add all products
-    async addAllProductsToCart() {
-        while (await this.addToCartButton.count() > 0) {
-            await this.addToCartButton.first().click();
-        }
+    // //add all products
+    // async addAllProductsToCart() {
+    //     while (await this.addToCartButton.count() > 0) {
+    //         await this.addToCartButton.first().click();
+    //     }
+    // Add all products to cart
+async addAllProductsToCart(): Promise<void> {
+  const addButtons = this.page.locator('.inventory_item button');
+
+  const count = await addButtons.count();
+  for (let i = 0; i < count; i++) {
+    await addButtons.nth(i).click();
+  }
     }
 
     //navigate to cart page
@@ -74,15 +82,27 @@ export class ProductPage extends BasePage {
         await this.shoppingCartIcon.click();
     }
 
-    //get product count in cart
+    // //get product count in cart
+    // async getCartItemCount(): Promise<number> {
+    //     if(!(await this.shoppingCartIcon.isVisible())){
+    //          return 0;
+    //     }
+
+    //      const countText = await this.shoppingCartIcon.textContent();
+    //         return countText ? parseInt(countText.trim()) : 0;
+    // } 
+    // Get product count in cart safely
     async getCartItemCount(): Promise<number> {
-        if(!(await this.shoppingCartIcon.isVisible())){
-             return 0;
+        const badge = this.page.locator('.shopping_cart_badge');
+
+        // If badge is missing, cart is empty
+        if (await badge.count() === 0) {
+            return 0;
         }
-      
-         const countText = await this.shoppingCartIcon.textContent();
-            return countText ? parseInt(countText.trim()) : 0;
-    }  
+
+        const countText = await badge.textContent();
+        return countText ? parseInt(countText.trim(), 10) : 0;
+    }
 
     //logout from application
     async logout() {
