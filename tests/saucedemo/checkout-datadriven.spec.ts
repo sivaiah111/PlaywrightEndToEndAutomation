@@ -10,7 +10,7 @@ type CheckoutData = {
 };
 
 //read data using genric function
-const checkoutData: CheckoutData = readTestData<CheckoutData[]>('./testdata/datadrivenData.json');
+const checkoutData: CheckoutData = readTestData<CheckoutData[]>('./testdata/dataDrivenData.json');
 
 
 test.describe('checkout page tests', () => {
