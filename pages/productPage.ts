@@ -1,9 +1,9 @@
-import {Locator,Page} from '@playwright/test';
-import {BasePage} from './basePage';
+import { Locator, Page } from '@playwright/test';
+import { BasePage } from './basePage';
 
-export class ProductPage extends BasePage {  
+export class ProductPage extends BasePage {
     private productTitle: Locator;
-    private productName : Locator;
+    private productName: Locator;
     private productDescription: Locator;
     private productPrice: Locator;
     private addToCartButton: Locator;
@@ -11,7 +11,8 @@ export class ProductPage extends BasePage {
     private shoppingCartIcon: Locator;
     private hamburgerMenu: Locator;
     private logoutButton: Locator;
-    private productList: Locator;   
+    private productList: Locator;
+
 
     constructor(page: Page) {
         super(page);
@@ -35,8 +36,8 @@ export class ProductPage extends BasePage {
 
     //add products by index (0,1,2...)
     async addProductToCartByIndex(index: number) {
-       // const addButtons = await this.addToCartButton.allTextContents;
-         const addButtons = await this.addToCartButton.elementHandles(); 
+        // const addButtons = await this.addToCartButton.allTextContents;
+        const addButtons = await this.addToCartButton.elementHandles();
         if (index < addButtons.length) {
             await addButtons[index].click();
         } else {
@@ -44,28 +45,28 @@ export class ProductPage extends BasePage {
         }
     }
 
-//add product by name
+    //add product by name
     async addProductToCartByName(productName: string) {
-    const product = this.page
-        .locator('.inventory_item')
-        .filter({ hasText: productName });
+        const product = this.page
+            .locator('.inventory_item')
+            .filter({ hasText: productName });
 
-    await product.getByRole('button', { name: 'Add to cart' }).click();
-}
+        await product.getByRole('button', { name: 'Add to cart' }).click();
+    }
 
     //remove product by name
-  async removeProductFromCartByName(productName: string) {
-    const product = this.page
-        .locator('.inventory_item')
-        .filter({ hasText: productName });
+    async removeProductFromCartByName(productName: string) {
+        const product = this.page
+            .locator('.inventory_item')
+            .filter({ hasText: productName });
 
-    await product.getByRole('button', { name: 'Remove' }).click();
-}
+        await product.getByRole('button', { name: 'Remove' }).click();
+    }
     //add all products
     async addAllProductsToCart() {
         while (await this.addToCartButton.count() > 0) {
-        await this.addToCartButton.first().click();
-    }
+            await this.addToCartButton.first().click();
+        }
     }
 
     //navigate to cart page
@@ -81,7 +82,7 @@ export class ProductPage extends BasePage {
       
          const countText = await this.shoppingCartIcon.textContent();
             return countText ? parseInt(countText.trim()) : 0;
-    }   
+    }  
 
     //logout from application
     async logout() {
@@ -90,9 +91,9 @@ export class ProductPage extends BasePage {
     }
 
     async getPoductCount(): Promise<number> {
-    await this.productList.first().waitFor({ state: 'visible' });
-    return await this.productList.count();
-}
+        await this.productList.first().waitFor({ state: 'visible' });
+        return await this.productList.count();
+    }
 
 
     async sortProductsBy(option: string) {
@@ -111,7 +112,7 @@ export class ProductPage extends BasePage {
             }
         }
         return prices;
-    }   
-    
+    }
+
 
 }

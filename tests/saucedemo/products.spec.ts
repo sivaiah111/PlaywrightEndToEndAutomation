@@ -1,7 +1,7 @@
 import {test,expect} from '../../fixtures/appFixtures';
 
 test.describe('Products page Tests', () => {
-test.setTimeout(60000);
+// test.setTimeout(60000);
  test.beforeEach(async ({ loginPage,productPage }) => {
         await loginPage.navigateTo();
         await loginPage.loginAs('STANDARD_USER');
@@ -23,7 +23,7 @@ test.setTimeout(60000);
         const cartCount = await productPage.getCartItemCount();
         await expect(cartCount).toBe(2);
     });
-
+    
     test('Add product by name and verify cart count', async ({ productPage }) => {
         await productPage.addProductToCartByName('Sauce Labs Bolt T-Shirt');
         const cartCount = await productPage.getCartItemCount();
