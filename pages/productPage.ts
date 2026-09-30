@@ -62,11 +62,19 @@ export class ProductPage extends BasePage {
 
         await product.getByRole('button', { name: 'Remove' }).click();
     }
-    //add all products
-    async addAllProductsToCart() {
-        while (await this.addToCartButton.count() > 0) {
-            await this.addToCartButton.first().click();
-        }
+    // //add all products
+    // async addAllProductsToCart() {
+    //     while (await this.addToCartButton.count() > 0) {
+    //         await this.addToCartButton.first().click();
+    //     }
+    // Add all products to cart
+async addAllProductsToCart(): Promise<void> {
+  const addButtons = this.page.locator('.inventory_item button');
+
+  const count = await addButtons.count();
+  for (let i = 0; i < count; i++) {
+    await addButtons.nth(i).click();
+  }
     }
 
     //navigate to cart page
