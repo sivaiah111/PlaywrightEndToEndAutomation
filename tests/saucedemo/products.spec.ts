@@ -10,11 +10,12 @@ test.setTimeout(60000);
     });
 
     test('should display products and verfy product list', async ({ productPage }) => {
-        await expect(productPage.isProductPageLoaded()).toBeTruthy();
-          const count = await productPage.getPoductCount();
-        await expect(count).toBeGreaterThan(0);
-         await expect(count).toBe(6);
-    });
+    await expect(productPage.isProductPageLoaded()).toBeTruthy();
+    const count = await productPage.getPoductCount();
+    await expect(count).toBeGreaterThan(0);
+    await expect(count).toBe(6);
+});
+
 
     test('Add products to cart and verify cart count', async ({ productPage }) => {
         await productPage.addProductToCartByIndex(0);

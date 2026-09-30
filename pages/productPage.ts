@@ -89,9 +89,11 @@ export class ProductPage extends BasePage {
         await this.logoutButton.click();
     }
 
-    async getPoductCount(): Promise<number> {   
-        return await this.productList.count();
-    }
+    async getPoductCount(): Promise<number> {
+    await this.productList.first().waitFor({ state: 'visible' });
+    return await this.productList.count();
+}
+
 
     async sortProductsBy(option: string) {
         const sortSelect = this.page.locator('.product_sort_container');
