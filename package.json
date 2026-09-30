@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:saucedemo": "cross-env ENV_ID=dev npx playwright test tests/saucedemo --project=chromium",
+    "test:ui": "cross-env ENV_ID=dev npx playwright test tests/saucedemo --project=chromium",
     "test:api": "cross-env ENV_ID=qa npx playwright test tests/booking --project=chromium",
     "test:heroku": "cross-env ENV_ID=qa npx playwright test tests/herokuapp --project=chromium",
     "test:all": "npm run test:ui && npm run test:api && npm run test:heroku",
